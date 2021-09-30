@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace ToyRobot.Domain.Constants
 {
@@ -19,10 +17,10 @@ namespace ToyRobot.Domain.Constants
         public const string WEST = "WEST";
 
         //Board
-        public const int rows = 6;
-        public const int columns = 6;
+        public const int ROWS = 6;
+        public const int COLUMNS = 6;
 
         public static List<string> ValidCommands = new List<string> { MOVE, LEFT, RIGHT, PLACE, REPORT };
-        public static List<string> ValidDirections = new List<string> { EAST,NORTH,SOUTH,WEST };
+        public static List<string> ValidDirections = new List<string> { EAST, NORTH, SOUTH, WEST };
     }
 }

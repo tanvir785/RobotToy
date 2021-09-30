@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using ToyRobot.Application.Exceptions;
+﻿using ToyRobot.Application.Exceptions;
 using ToyRobot.Application.Interfaces;
 using ToyRobot.Domain.Constants;
 using ToyRobot.Domain.Models;
@@ -15,7 +12,7 @@ namespace ToyRobot.Application.Classes
     {
         public bool isPositionIsValid(Position newPosition, Board board)
         {
-            if (newPosition.X >= board.rows || newPosition.Y >= board.columns || newPosition.X < 0 || newPosition.Y < 0) throw new InvalidPositionException(newPosition);
+            if (newPosition.X >= board.Rows || newPosition.Y >= board.Columns || newPosition.X < 0 || newPosition.Y < 0) throw new InvalidPositionException(newPosition);
 
             else return true;
         }
@@ -25,7 +22,7 @@ namespace ToyRobot.Application.Classes
             return (AppConstants.ValidDirections.Contains(direction));
         }
 
-        public bool isCommandIsValid (string command)
+        public bool isCommandIsValid(string command)
         {
             if (AppConstants.ValidCommands.Contains(command)) return true;
             else return false;

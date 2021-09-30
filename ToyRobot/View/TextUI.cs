@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using ToyRobot.Application;
 using ToyRobot.Application.Exceptions;
 using ToyRobot.Domain.Constants;
@@ -28,7 +26,7 @@ namespace ToyRobot.Presentation.View
                     }
                     app._command = parser.command;
 
-                    if (app._AppInitialized) app.ExecuteCommand();
+                    if (app.AppIsInitialized) app.ExecuteCommand();
                     else throw new InvalidCommandException(app._command);
                 }
                 catch (InvalidCommandException ex)

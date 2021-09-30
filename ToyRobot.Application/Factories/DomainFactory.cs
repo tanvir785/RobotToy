@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using ToyRobot.Domain.Constants;
+﻿using ToyRobot.Domain.Constants;
 using ToyRobot.Domain.Models;
 
 namespace ToyRobot.Application
@@ -10,11 +7,11 @@ namespace ToyRobot.Application
     /// Using Factory design patern here. Keeps the program less tightly coupled and provides an abstraction layer.
     /// The basic factory creates domain layer objects
     /// </summary>
-    public class DomainFactory 
+    public class DomainFactory
     {
-        public static  Board CreateBoard()
+        public static Board CreateBoard()
         {
-            return new Board(AppConstants.rows, AppConstants.columns);
+            return new Board(AppConstants.ROWS, AppConstants.COLUMNS);
         }
         public static Position CreatePosition()
         {

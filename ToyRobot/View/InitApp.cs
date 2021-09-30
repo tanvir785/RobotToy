@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using ToyRobot.Application;
-using ToyRobot.Application.Classes;
 using ToyRobot.Application.Interfaces;
 using ToyRobot.Domain.Constants;
 using ToyRobot.Domain.Models;
@@ -21,7 +18,7 @@ namespace ToyRobot.Presentation
         public Robot _robot;
         public Board _board;
 
-        public bool _AppInitialized = false;    //<-- Keeps check on if program is good for other execution and if Place command has been issued.
+        public bool AppIsInitialized = false;    //<-- Keeps check on if program is good for other execution and if Place command has been issued.
         public InitApp()
         {
             _board = DomainFactory.CreateBoard();
@@ -33,7 +30,7 @@ namespace ToyRobot.Presentation
             _reporter = reporter;
             _director = director;
             _mover = mover;
-            _AppInitialized = true;
+            AppIsInitialized = true;
         }
 
         public void ExecuteCommand()
