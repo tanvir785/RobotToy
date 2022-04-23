@@ -7,6 +7,7 @@ namespace ToyRobot.Application.Classes
     public class Mover : IMover
     {
         private Position newPosition;
+
         private readonly IValidator _validator;
         public Mover(IValidator validator)
         {

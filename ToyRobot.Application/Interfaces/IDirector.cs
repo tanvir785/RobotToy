@@ -8,7 +8,7 @@ namespace ToyRobot.Application.Interfaces
     /// <summary>
     /// Change direction of Robot
     /// </summary>
-    public interface IDirector
+    public interface IDirector : IBLFactory
     {
         void Left(Robot robot); 
         void Right(Robot robot);

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using ToyRobot.Application;
+using ToyRobot.Application.Classes;
+using ToyRobot.Application.Interfaces;
 using ToyRobot.Domain.Constants;
 using ToyRobot.Domain.Models;
 using ToyRobot.Presentation;
@@ -25,6 +27,20 @@ namespace ToyRobot.Tests
             app.ExecuteCommand();
             string output = BLFactory.CreateReporter().GetCurrentPosition(app._robot, app._board);
             Assert.Equal(expected, output);
+        }
+
+        [Fact]
+        public void TestFactoryReturnsCorrectType()
+        {
+            IBLFactory aValidator = BLFactory.Get<IValidator>();
+            IBLFactory aReporter = BLFactory.Get<IReporter>();
+            IBLFactory aDirector = BLFactory.Get<IDirector>();
+            IBLFactory aMover = BLFactory.Get<IMover>();
+
+            Assert.Equal(typeof(Validator), aValidator.GetType());
+            Assert.Equal(typeof(Reporter), aReporter.GetType());
+            Assert.Equal(typeof(Director), aDirector.GetType());
+            Assert.Equal(typeof(Mover), aMover.GetType());
         }
 
         [Fact]

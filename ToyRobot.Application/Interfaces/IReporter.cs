@@ -8,7 +8,7 @@ namespace ToyRobot.Application.Interfaces
     /// <summary>
     /// Outputs current position to 
     /// </summary>
-    public interface IReporter
+    public interface IReporter : IBLFactory
     {
         string GetCurrentPosition(Robot robot, Board board);
     }

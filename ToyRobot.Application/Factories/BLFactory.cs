@@ -14,6 +14,30 @@ namespace ToyRobot.Application
     /// </summary>
     public static class BLFactory
     {
+        public static IBLFactory Get<T>()
+        {
+            if(typeof(T).IsAssignableFrom(typeof(IValidator)))
+            {
+                return CreateValidator();
+            }
+
+            else if (typeof(T).IsAssignableFrom(typeof(IReporter)))
+            {
+                return CreateReporter();
+            }
+
+            else if (typeof(T).IsAssignableFrom(typeof(IDirector)))
+            {
+                return CreateDirector();
+            }
+
+            else if(typeof(T).IsAssignableFrom(typeof(IMover)))
+            {
+                return CreateMover();
+            }
+            else return null;
+        }
+
         public static IValidator CreateValidator()
         {
             return new Validator();
